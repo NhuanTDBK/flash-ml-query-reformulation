@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    app:
+        image: hn-search-api:latest
+        build:
+            context: backend
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        environment:
+            - ENV_VAR=your_value
+        volumes:
+            - .:/app
+volumes:
+    db_data:
